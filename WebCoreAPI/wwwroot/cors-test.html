@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS Test Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 3px;
+            white-space: pre-wrap;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <h1>CORS Test Client</h1>
+    <p>This page demonstrates different CORS scenarios with your Web API.</p>
+    <p><strong>API Base URL:</strong> <span id="baseUrl">http://localhost:5274</span> 
+       <button onclick="changeBaseUrl()">Change URL</button>
+    </p>
+
+    <div class="test-section">
+        <h3>Test 1: Global CORS Policy (AllowAll)</h3>
+        <button onclick="testGlobalCors()">Test Global CORS</button>
+        <div id="result1" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 2: Specific Origins Policy</h3>
+        <button onclick="testSpecificCors()">Test Specific CORS</button>
+        <div id="result2" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 3: Restrictive Policy</h3>
+        <button onclick="testRestrictiveCors()">Test Restrictive CORS</button>
+        <div id="result3" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 4: POST Request with CORS</h3>
+        <button onclick="testPostCors()">Test POST with CORS</button>
+        <div id="result4" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 5: Disabled CORS</h3>
+        <button onclick="testNoCors()">Test No CORS (Should Fail)</button>
+        <div id="result5" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 6: Preflight Request (PUT)</h3>
+        <button onclick="testPreflight()">Test PUT with Preflight</button>
+        <div id="result6" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 7: Bookstore API Endpoints</h3>
+        <button onclick="testBooksApi()">Test Books API</button>
+        <button onclick="testAuthorsApi()">Test Authors API</button>
+        <button onclick="testCategoriesApi()">Test Categories API</button>
+        <div id="result7" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 8: Book Order (POST with bookstore data)</h3>
+        <button onclick="testBookOrder()">Test Book Order</button>
+        <div id="result8" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 9: Conventional Routing Examples</h3>
+        <button onclick="testConventionalRouting()">Test Conventional Books</button>
+        <button onclick="testCategoryBooks()">Test Category Books</button>
+        <button onclick="testAuthorBooks()">Test Author Books</button>
+        <div id="result9" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 10: Attribute Routing Examples</h3>
+        <button onclick="testAttributeRouting()">Test Basic Attribute</button>
+        <button onclick="testAttributeWithParams()">Test With Parameters</button>
+        <button onclick="testAttributeSearch()">Test Search Route</button>
+        <div id="result10" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 11: Hybrid Routing Examples</h3>
+        <button onclick="testHybridConventional()">Test Hybrid Conventional</button>
+        <button onclick="testHybridAttribute()">Test Hybrid Attribute</button>
+        <button onclick="testHybridRouteInfo()">Test Route Info</button>
+        <div id="result11" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 12: Advanced Routing Features</h3>
+        <button onclick="testAdvancedConstraints()">Test Constraints</button>
+        <button onclick="testAdvancedOptional()">Test Optional Params</button>
+        <button onclick="testAdvancedDebug()">Test Debug Info</button>
+        <div id="result12" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 13: API Versioning - URL Path</h3>
+        <button onclick="testVersionV1Books()">Test V1 Books</button>
+        <button onclick="testVersionV2Books()">Test V2 Books</button>
+        <button onclick="testVersionUrlPath()">Test URL Path Versioning</button>
+        <div id="result13" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 14: API Versioning - Query String</h3>
+        <button onclick="testQueryStringV1()">Test Query String V1</button>
+        <button onclick="testQueryStringV2()">Test Query String V2</button>
+        <div id="result14" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 15: API Versioning - Headers</h3>
+        <button onclick="testHeaderVersionV1()">Test Header V1</button>
+        <button onclick="testHeaderVersionV2()">Test Header V2</button>
+        <div id="result15" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 16: API Versioning - Media Type</h3>
+        <button onclick="testMediaTypeV1()">Test Media Type V1</button>
+        <button onclick="testMediaTypeV2()">Test Media Type V2</button>
+        <button onclick="testVersioningInfo()">Test Versioning Info</button>
+        <div id="result16" class="result"></div>
+    </div>
+
+    <!-- Authentication & Authorization Testing -->
+    <h2>Authentication & Authorization Testing</h2>
+    
+    <div class="test-section">
+        <h3>Test 17: Authentication System</h3>
+        <button onclick="testAuthInfo()">Test Auth Info</button>
+        <button onclick="testLogin()">Login as Admin</button>
+        <button onclick="testLoginManager()">Login as Manager</button>
+        <button onclick="testLoginUser()">Login as User</button>
+        <button onclick="testGetCurrentUser()">Get Current User</button>
+        <button onclick="testLogout()">Logout</button>
+        <div id="result17" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 18: Role-Based Authorization</h3>
+        <button onclick="testPublicAccess()">Test Public Access</button>
+        <button onclick="testAuthenticatedAccess()">Test Authenticated</button>
+        <button onclick="testAdminOnly()">Test Admin Only</button>
+        <button onclick="testManagerOrAdmin()">Test Manager/Admin</button>
+        <button onclick="testRoleMatrix()">Test Role Matrix</button>
+        <div id="result18" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 19: Policy-Based Authorization</h3>
+        <button onclick="testSecurityLevel2()">Test Security Level 2</button>
+        <button onclick="testSecurityLevel4()">Test Security Level 4</button>
+        <button onclick="testITDepartment()">Test IT Department</button>
+        <button onclick="testUserManagement()">Test User Management</button>
+        <button onclick="testSystemAdmin()">Test System Admin</button>
+        <div id="result19" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 20: Claims-Based Authorization</h3>
+        <button onclick="testMyClaims()">Test My Claims</button>
+        <button onclick="testITDepartmentClaims()">Test IT Department Claims</button>
+        <button onclick="testHighSecurity()">Test High Security</button>
+        <button onclick="testExecutiveAccess()">Test Executive Access</button>
+        <button onclick="testCompositeClaims()">Test Composite Claims</button>
+        <div id="result20" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 21: Comprehensive Authorization</h3>
+        <button onclick="testAuthOverview()">Test Auth Overview</button>
+        <button onclick="testTokenInfo()">Test Token Info</button>
+        <button onclick="testComprehensiveV1()">Test Comprehensive V1</button>
+        <button onclick="testComprehensiveV2()">Test Comprehensive V2</button>
+        <div id="result21" class="result"></div>
+    </div>
+
+    <!-- Exception Handling Testing -->
+    <h2>Global Exception Handling Testing</h2>
+    
+    <div class="test-section">
+        <h3>Test 22: Exception System Overview</h3>
+        <button onclick="testExceptionInfo()">Test Exception Info</button>
+        <button onclick="testValidationError()">Test Validation Error</button>
+        <button onclick="testNotFound()">Test Not Found</button>
+        <button onclick="testUnauthorized()">Test Unauthorized</button>
+        <button onclick="testForbidden()">Test Forbidden</button>
+        <div id="result22" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 23: Business & Service Exceptions</h3>
+        <button onclick="testConflict()">Test Conflict</button>
+        <button onclick="testTimeout()">Test Timeout</button>
+        <button onclick="testBusinessRule()">Test Business Rule</button>
+        <button onclick="testExternalService()">Test External Service</button>
+        <button onclick="testRateLimit()">Test Rate Limit</button>
+        <div id="result23" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 24: Internal & System Exceptions</h3>
+        <button onclick="testInternalError()">Test Internal Error</button>
+        <button onclick="testNullReference()">Test Null Reference</button>
+        <button onclick="testArgumentError()">Test Argument Error</button>
+        <button onclick="testCorrelationId()">Test with Correlation ID</button>
+        <button onclick="testAuthenticatedError()">Test Authenticated Error</button>
+        <div id="result24" class="result"></div>
+    </div>
+
+    <script>
+        let baseUrl = 'http://localhost:5274';
+
+        function changeBaseUrl() {
+            const newUrl = prompt('Enter the API base URL:', baseUrl);
+            if (newUrl) {
+                baseUrl = newUrl;
+                document.getElementById('baseUrl').textContent = baseUrl;
+            }
+        }
+
+        async function makeRequest(url, options = {}) {
+            try {
+                const response = await fetch(url, options);
+                const data = await response.json();
+                return {
+                    success: true,
+                    status: response.status,
+                    headers: Object.fromEntries(response.headers.entries()),
+                    data: data
+                };
+            } catch (error) {
+                return {
+                    success: false,
+                    error: error.message
+                };
+            }
+        }
+
+        function displayResult(elementId, result) {
+            const element = document.getElementById(elementId);
+            element.className = 'result ' + (result.success ? 'success' : 'error');
+            
+            if (result.success) {
+                element.textContent = `Success (${result.status})\nResponse: ${JSON.stringify(result.data, null, 2)}`;
+            } else {
+                element.textContent = `Error: ${result.error}`;
+            }
+        }
+
+        async function testGlobalCors() {
+            const result = await makeRequest(`${baseUrl}/api/corsexample/global`);
+            displayResult('result1', result);
+        }
+
+        async function testSpecificCors() {
+            const result = await makeRequest(`${baseUrl}/api/corsexample/specific`);
+            displayResult('result2', result);
+        }
+
+        async function testRestrictiveCors() {
+            const result = await makeRequest(`${baseUrl}/api/corsexample/restrictive`);
+            displayResult('result3', result);
+        }
+
+        async function testPostCors() {
+            const result = await makeRequest(`${baseUrl}/api/corsexample/data`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    message: 'Hello from CORS test!',
+                    timestamp: new Date().toISOString()
+                })
+            });
+            displayResult('result4', result);
+        }
+
+        async function testNoCors() {
+            const result = await makeRequest(`${baseUrl}/api/corsexample/no-cors`);
+            displayResult('result5', result);
+        }
+
+        async function testPreflight() {
+            const result = await makeRequest(`${baseUrl}/api/corsexample/preflight-test`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer test-token'
+                },
+                body: JSON.stringify({ 
+                    message: 'PUT request with preflight',
+                    timestamp: new Date().toISOString()
+                })
+            });
+            displayResult('result6', result);
+        }
+
+        async function testBooksApi() {
+            const result = await makeRequest(`${baseUrl}/api/books`);
+            displayResult('result7', result);
+        }
+
+        async function testAuthorsApi() {
+            const result = await makeRequest(`${baseUrl}/api/authors`);
+            displayResult('result7', result);
+        }
+
+        async function testCategoriesApi() {
+            const result = await makeRequest(`${baseUrl}/api/categories`);
+            displayResult('result7', result);
+        }
+
+        async function testBookOrder() {
+            const result = await makeRequest(`${baseUrl}/api/corsexample/book-order`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    customerName: 'John Doe',
+                    bookTitle: 'Foundation',
+                    quantity: 2,
+                    price: 15.99
+                })
+            });
+            displayResult('result8', result);
+        }
+
+        // Conventional Routing Tests
+        async function testConventionalRouting() {
+            const result = await makeRequest(`${baseUrl}/api/ConventionalBooks`);
+            displayResult('result9', result);
+        }
+
+        async function testCategoryBooks() {
+            const result = await makeRequest(`${baseUrl}/categories/1/books`);
+            displayResult('result9', result);
+        }
+
+        async function testAuthorBooks() {
+            const result = await makeRequest(`${baseUrl}/authors/1/books`);
+            displayResult('result9', result);
+        }
+
+        // Attribute Routing Tests
+        async function testAttributeRouting() {
+            const result = await makeRequest(`${baseUrl}/attribute-demo/basic`);
+            displayResult('result10', result);
+        }
+
+        async function testAttributeWithParams() {
+            const result = await makeRequest(`${baseUrl}/books-attr/123`);
+            displayResult('result10', result);
+        }
+
+        async function testAttributeSearch() {
+            const result = await makeRequest(`${baseUrl}/books-attr/search/foundation/page/1`);
+            displayResult('result10', result);
+        }
+
+        // Hybrid Routing Tests
+        async function testHybridConventional() {
+            const result = await makeRequest(`${baseUrl}/api/HybridRouting`);
+            displayResult('result11', result);
+        }
+
+        async function testHybridAttribute() {
+            const result = await makeRequest(`${baseUrl}/hybrid/custom-endpoint`);
+            displayResult('result11', result);
+        }
+
+        async function testHybridRouteInfo() {
+            const result = await makeRequest(`${baseUrl}/hybrid/route-info`);
+            displayResult('result11', result);
+        }
+
+        // Advanced Routing Tests
+        async function testAdvancedConstraints() {
+            const result = await makeRequest(`${baseUrl}/advanced-routing/age/25`);
+            displayResult('result12', result);
+        }
+
+        async function testAdvancedOptional() {
+            const result = await makeRequest(`${baseUrl}/advanced-routing/search/scifi/page/2/size/5`);
+            displayResult('result12', result);
+        }
+
+        async function testAdvancedDebug() {
+            const result = await makeRequest(`${baseUrl}/advanced-routing/debug`);
+            displayResult('result12', result);
+        }
+
+        // API Versioning Tests
+        async function testVersionV1Books() {
+            const result = await makeRequest(`${baseUrl}/v1.0/books`);
+            displayResult('result13', result);
+        }
+
+        async function testVersionV2Books() {
+            const result = await makeRequest(`${baseUrl}/v2.0/books?page=1&pageSize=2`);
+            displayResult('result13', result);
+        }
+
+        async function testVersionUrlPath() {
+            const result = await makeRequest(`${baseUrl}/v1.0/versioning-demo/url-path-versioning`);
+            displayResult('result13', result);
+        }
+
+        async function testQueryStringV1() {
+            const result = await makeRequest(`${baseUrl}/versioning-demo/query-string-versioning?api-version=1.0`);
+            displayResult('result14', result);
+        }
+
+        async function testQueryStringV2() {
+            const result = await makeRequest(`${baseUrl}/versioning-demo/query-string-versioning?api-version=2.0`);
+            displayResult('result14', result);
+        }
+
+        async function testHeaderVersionV1() {
+            const resultDiv = document.getElementById('result15');
+            
+            try {
+                const response = await fetch(`${baseUrl}/versioning-demo/header-versioning`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Version': '1.0'
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `
+                        <p style="color: green;">✅ Header V1 Versioning Successful!</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `<p style="color: orange;">⚠️ Response: ${response.status} - ${response.statusText}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testHeaderVersionV2() {
+            const resultDiv = document.getElementById('result15');
+            
+            try {
+                const response = await fetch(`${baseUrl}/versioning-demo/header-versioning`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Version': '2.0'
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `
+                        <p style="color: green;">✅ Header V2 Versioning Successful!</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `<p style="color: orange;">⚠️ Response: ${response.status} - ${response.statusText}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testMediaTypeV1() {
+            const resultDiv = document.getElementById('result16');
+            
+            try {
+                const response = await fetch(`${baseUrl}/versioning-demo/media-type-versioning`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json; version=1.0'
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `
+                        <p style="color: green;">✅ Media Type V1 Versioning Successful!</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `<p style="color: orange;">⚠️ Response: ${response.status} - ${response.statusText}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testMediaTypeV2() {
+            const resultDiv = document.getElementById('result16');
+            
+            try {
+                const response = await fetch(`${baseUrl}/versioning-demo/media-type-versioning`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json; version=2.0'
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `
+                        <p style="color: green;">✅ Media Type V2 Versioning Successful!</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `<p style="color: orange;">⚠️ Response: ${response.status} - ${response.statusText}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testVersioningInfo() {
+            const result = await makeRequest(`${baseUrl}/versioning-demo/versioning-info?api-version=2.0`);
+            displayResult('result16', result);
+        }
+
+        // Global variable to store JWT token
+        let jwtToken = null;
+
+        // Authentication Tests
+        async function testAuthInfo() {
+            const result = await makeRequest(`${baseUrl}/auth/info`);
+            displayResult('result17', result);
+        }
+
+        async function testLogin() {
+            const resultDiv = document.getElementById('result17');
+            try {
+                const response = await fetch(`${baseUrl}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: 'admin',
+                        password: 'admin123'
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    jwtToken = data.token; // Store token for subsequent requests
+                    resultDiv.innerHTML = `
+                        <p style="color: green;">✅ Login Successful!</p>
+                        <p><strong>Token stored for subsequent tests</strong></p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    const error = await response.json();
+                    resultDiv.innerHTML = `<p style="color: red;">❌ Login failed: ${JSON.stringify(error, null, 2)}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testLoginManager() {
+            const resultDiv = document.getElementById('result17');
+            try {
+                const response = await fetch(`${baseUrl}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: 'manager',
+                        password: 'manager123'
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    jwtToken = data.token;
+                    resultDiv.innerHTML = `
+                        <p style="color: green;">✅ Manager Login Successful!</p>
+                        <p><strong>Token stored for subsequent tests</strong></p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    const error = await response.json();
+                    resultDiv.innerHTML = `<p style="color: red;">❌ Login failed: ${JSON.stringify(error, null, 2)}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testLoginUser() {
+            const resultDiv = document.getElementById('result17');
+            try {
+                const response = await fetch(`${baseUrl}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: 'user',
+                        password: 'user123'
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    jwtToken = data.token;
+                    resultDiv.innerHTML = `
+                        <p style="color: green;">✅ User Login Successful!</p>
+                        <p><strong>Token stored for subsequent tests</strong></p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    const error = await response.json();
+                    resultDiv.innerHTML = `<p style="color: red;">❌ Login failed: ${JSON.stringify(error, null, 2)}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testGetCurrentUser() {
+            if (!jwtToken) {
+                document.getElementById('result17').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+
+            const result = await makeAuthenticatedRequest(`${baseUrl}/auth/me`);
+            displayResult('result17', result);
+        }
+
+        async function testLogout() {
+            if (!jwtToken) {
+                document.getElementById('result17').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+
+            const result = await makeAuthenticatedRequest(`${baseUrl}/auth/logout`, 'POST');
+            jwtToken = null; // Clear stored token
+            displayResult('result17', result);
+        }
+
+        // Role-Based Authorization Tests
+        async function testPublicAccess() {
+            const result = await makeRequest(`${baseUrl}/role-demo/public`);
+            displayResult('result18', result);
+        }
+
+        async function testAuthenticatedAccess() {
+            if (!jwtToken) {
+                document.getElementById('result18').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/role-demo/authenticated`);
+            displayResult('result18', result);
+        }
+
+        async function testAdminOnly() {
+            if (!jwtToken) {
+                document.getElementById('result18').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/role-demo/admin-only`);
+            displayResult('result18', result);
+        }
+
+        async function testManagerOrAdmin() {
+            if (!jwtToken) {
+                document.getElementById('result18').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/role-demo/manager-or-admin`);
+            displayResult('result18', result);
+        }
+
+        async function testRoleMatrix() {
+            if (!jwtToken) {
+                document.getElementById('result18').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/auth-demo/role-matrix`);
+            displayResult('result18', result);
+        }
+
+        // Policy-Based Authorization Tests
+        async function testSecurityLevel2() {
+            if (!jwtToken) {
+                document.getElementById('result19').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/policy-demo/security-level-2`);
+            displayResult('result19', result);
+        }
+
+        async function testSecurityLevel4() {
+            if (!jwtToken) {
+                document.getElementById('result19').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/policy-demo/security-level-4`);
+            displayResult('result19', result);
+        }
+
+        async function testITDepartment() {
+            if (!jwtToken) {
+                document.getElementById('result19').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/policy-demo/it-department`);
+            displayResult('result19', result);
+        }
+
+        async function testUserManagement() {
+            if (!jwtToken) {
+                document.getElementById('result19').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/policy-demo/user-management`);
+            displayResult('result19', result);
+        }
+
+        async function testSystemAdmin() {
+            if (!jwtToken) {
+                document.getElementById('result19').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/policy-demo/system-admin`);
+            displayResult('result19', result);
+        }
+
+        // Claims-Based Authorization Tests
+        async function testMyClaims() {
+            if (!jwtToken) {
+                document.getElementById('result20').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/claims-demo/my-claims`);
+            displayResult('result20', result);
+        }
+
+        async function testITDepartmentClaims() {
+            if (!jwtToken) {
+                document.getElementById('result20').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/claims-demo/it-department-only`);
+            displayResult('result20', result);
+        }
+
+        async function testHighSecurity() {
+            if (!jwtToken) {
+                document.getElementById('result20').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/claims-demo/high-security`);
+            displayResult('result20', result);
+        }
+
+        async function testExecutiveAccess() {
+            if (!jwtToken) {
+                document.getElementById('result20').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/claims-demo/executive-access`);
+            displayResult('result20', result);
+        }
+
+        async function testCompositeClaims() {
+            if (!jwtToken) {
+                document.getElementById('result20').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/claims-demo/composite-claims`);
+            displayResult('result20', result);
+        }
+
+        // Comprehensive Authorization Tests
+        async function testAuthOverview() {
+            const result = await makeRequest(`${baseUrl}/auth-demo/overview`);
+            displayResult('result21', result);
+        }
+
+        async function testTokenInfo() {
+            if (!jwtToken) {
+                document.getElementById('result21').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/auth-demo/token-info`);
+            displayResult('result21', result);
+        }
+
+        async function testComprehensiveV1() {
+            if (!jwtToken) {
+                document.getElementById('result21').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/auth-demo/comprehensive-test?api-version=1.0`);
+            displayResult('result21', result);
+        }
+
+        async function testComprehensiveV2() {
+            if (!jwtToken) {
+                document.getElementById('result21').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/auth-demo/comprehensive-test?api-version=2.0`);
+            displayResult('result21', result);
+        }
+
+        // Exception Handling Tests
+        async function testExceptionInfo() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/info`);
+            displayResult('result22', result);
+        }
+
+        async function testValidationError() {
+            const resultDiv = document.getElementById('result22');
+            try {
+                const response = await fetch(`${baseUrl}/exception-demo/validation-error`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: "", // Invalid - empty
+                        age: -5,  // Invalid - negative
+                        email: "invalid-email" // Invalid - no @
+                    })
+                });
+
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <p style="color: ${response.ok ? 'green' : 'orange'};">Status: ${response.status} - ${response.statusText}</p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testNotFound() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/not-found/999`);
+            displayResult('result22', result);
+        }
+
+        async function testUnauthorized() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/unauthorized`);
+            displayResult('result22', result);
+        }
+
+        async function testForbidden() {
+            if (!jwtToken) {
+                document.getElementById('result22').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/exception-demo/forbidden`);
+            displayResult('result22', result);
+        }
+
+        async function testConflict() {
+            const resultDiv = document.getElementById('result23');
+            try {
+                const response = await fetch(`${baseUrl}/exception-demo/conflict`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: "existinguser",
+                        email: "user@example.com"
+                    })
+                });
+
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <p style="color: ${response.ok ? 'green' : 'orange'};">Status: ${response.status} - ${response.statusText}</p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testTimeout() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/timeout`);
+            displayResult('result23', result);
+        }
+
+        async function testBusinessRule() {
+            const resultDiv = document.getElementById('result23');
+            try {
+                const response = await fetch(`${baseUrl}/exception-demo/business-rule`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        productId: 1,
+                        quantity: 50, // Exceeds available stock
+                        price: 99.99
+                    })
+                });
+
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <p style="color: ${response.ok ? 'green' : 'orange'};">Status: ${response.status} - ${response.statusText}</p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        async function testExternalService() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/external-service`);
+            displayResult('result23', result);
+        }
+
+        async function testRateLimit() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/rate-limit`);
+            displayResult('result23', result);
+        }
+
+        async function testInternalError() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/internal-error`);
+            displayResult('result24', result);
+        }
+
+        async function testNullReference() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/null-reference`);
+            displayResult('result24', result);
+        }
+
+        async function testArgumentError() {
+            const result = await makeRequest(`${baseUrl}/exception-demo/argument-error/this-is-a-very-long-string-that-exceeds-the-maximum-allowed-length-of-100-characters-and-should-trigger-an-argument-exception`);
+            displayResult('result24', result);
+        }
+
+        async function testCorrelationId() {
+            const correlationId = 'TEST-' + Date.now();
+            const result = await makeRequest(`${baseUrl}/exception-demo/with-correlation/${correlationId}`);
+            displayResult('result24', result);
+        }
+
+        async function testAuthenticatedError() {
+            if (!jwtToken) {
+                document.getElementById('result24').innerHTML = '<p style="color: orange;">⚠️ Please login first</p>';
+                return;
+            }
+            const result = await makeAuthenticatedRequest(`${baseUrl}/exception-demo/authenticated-error`);
+            displayResult('result24', result);
+        }
+
+        // Helper function for authenticated requests
+        async function makeAuthenticatedRequest(url, method = 'GET') {
+            try {
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${jwtToken}`
+                    }
+                });
+
+                const data = await response.json();
+                return {
+                    status: response.status,
+                    statusText: response.statusText,
+                    data: data,
+                    ok: response.ok
+                };
+            } catch (error) {
+                return {
+                    status: 0,
+                    statusText: 'Network Error',
+                    data: { error: error.message },
+                    ok: false
+                };
+            }
+        }
+    </script>
+</body>
+</html>
