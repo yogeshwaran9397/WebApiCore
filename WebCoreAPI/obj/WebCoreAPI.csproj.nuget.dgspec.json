@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebCoreAPI\\WebCoreAPI.csproj": {}
+    "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj": {}
   },
   "projects": {
-    "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebCoreAPI\\WebCoreAPI.csproj": {
+    "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebCoreAPI\\WebCoreAPI.csproj",
+        "projectUniqueName": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj",
         "projectName": "WebCoreAPI",
-        "projectPath": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebCoreAPI\\WebCoreAPI.csproj",
+        "projectPath": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj",
         "packagesPath": "C:\\Users\\Yogesh\\.nuget\\packages\\",
-        "outputPath": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebCoreAPI\\obj\\",
+        "outputPath": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
