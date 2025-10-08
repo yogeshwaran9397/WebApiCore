@@ -9,6 +9,7 @@ A comprehensive ASP.NET Core 9.0 Web API demonstration project showcasing modern
 ## 🚀 **Features**
 
 ### Core API Features
+
 - **📚 Bookstore API**: Complete CRUD operations for books, authors, and categories
 - **🔐 JWT Authentication**: Secure token-based authentication with refresh tokens
 - **🛡️ Multi-Layer Authorization**: Role-based, policy-based, and claims-based authorization
@@ -19,6 +20,7 @@ A comprehensive ASP.NET Core 9.0 Web API demonstration project showcasing modern
 - **📊 Request/Response Logging**: Detailed logging for debugging and monitoring
 
 ### Technical Highlights
+
 - **.NET 9**: Latest .NET framework with enhanced performance
 - **OpenAPI/Swagger**: Interactive API documentation
 - **In-Memory Data**: Seeded demo data for immediate testing
@@ -69,12 +71,14 @@ WebApiCore/
 ## 🚀 **Getting Started**
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/yogesh-grl/WebApiCore.git
 cd WebApiCore
 ```
 
 ### 2. Build and Run
+
 ```bash
 # Restore dependencies
 dotnet restore
@@ -87,6 +91,7 @@ dotnet run --project WebCoreAPI
 ```
 
 ### 3. Access the API
+
 - **API Base URL**: `https://localhost:7000` or `http://localhost:5000`
 - **OpenAPI/Swagger**: `https://localhost:7000/openapi/v1.json`
 - **Health Check**: `GET /api/books` (returns sample books)
@@ -94,6 +99,7 @@ dotnet run --project WebCoreAPI
 ## 🔐 **Authentication & Authorization**
 
 ### Quick Authentication Test
+
 ```bash
 # Login with demo user
 POST https://localhost:7000/api/v1/auth/login
@@ -109,63 +115,70 @@ Authorization: Bearer <your-jwt-token>
 ```
 
 ### Demo Users
-| Username | Password | Roles | Security Level | Description |
-|----------|----------|--------|----------------|-------------|
-| `admin` | `admin123` | Admin, Manager, User | 5 | Full system access |
-| `manager` | `manager123` | Manager, User | 3 | Management access |
-| `user` | `user123` | User | 1 | Standard user access |
-| `support` | `support123` | Support, User | 2 | Customer support access |
-| `guest` | `guest123` | Guest | 0 | Limited read-only access |
+
+| Username    | Password       | Roles                | Security Level | Description              |
+| ----------- | -------------- | -------------------- | -------------- | ------------------------ |
+| `admin`   | `admin123`   | Admin, Manager, User | 5              | Full system access       |
+| `manager` | `manager123` | Manager, User        | 3              | Management access        |
+| `user`    | `user123`    | User                 | 1              | Standard user access     |
+| `support` | `support123` | Support, User        | 2              | Customer support access  |
+| `guest`   | `guest123`   | Guest                | 0              | Limited read-only access |
 
 ## 📚 **API Endpoints**
 
 ### Authentication Endpoints
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/v1/auth/info` | Get authentication system info | ❌ |
-| POST | `/api/v1/auth/login` | Login with credentials | ❌ |
-| POST | `/api/v1/auth/register` | Register new user | ❌ |
-| GET | `/api/v1/auth/me` | Get current user profile | ✅ |
-| POST | `/api/v1/auth/logout` | Logout current user | ✅ |
+
+| Method | Endpoint                  | Description                    | Auth Required |
+| ------ | ------------------------- | ------------------------------ | ------------- |
+| GET    | `/api/v1/auth/info`     | Get authentication system info | ❌            |
+| POST   | `/api/v1/auth/login`    | Login with credentials         | ❌            |
+| POST   | `/api/v1/auth/register` | Register new user              | ❌            |
+| GET    | `/api/v1/auth/me`       | Get current user profile       | ✅            |
+| POST   | `/api/v1/auth/logout`   | Logout current user            | ✅            |
 
 ### Bookstore API Endpoints
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/books` | Get paginated books | ❌ |
-| GET | `/api/books/{id}` | Get book by ID | ❌ |
-| POST | `/api/books` | Create new book | ✅ |
-| PUT | `/api/books/{id}` | Update existing book | ✅ |
-| DELETE | `/api/books/{id}` | Delete book | ✅ |
-| GET | `/api/books/search` | Search books | ❌ |
-| GET | `/api/authors` | Get all authors | ❌ |
-| GET | `/api/categories` | Get all categories | ❌ |
+
+| Method | Endpoint              | Description          | Auth Required |
+| ------ | --------------------- | -------------------- | ------------- |
+| GET    | `/api/books`        | Get paginated books  | ❌            |
+| GET    | `/api/books/{id}`   | Get book by ID       | ❌            |
+| POST   | `/api/books`        | Create new book      | ✅            |
+| PUT    | `/api/books/{id}`   | Update existing book | ✅            |
+| DELETE | `/api/books/{id}`   | Delete book          | ✅            |
+| GET    | `/api/books/search` | Search books         | ❌            |
+| GET    | `/api/authors`      | Get all authors      | ❌            |
+| GET    | `/api/categories`   | Get all categories   | ❌            |
 
 ### Authorization Demo Endpoints
-| Method | Endpoint | Policy | Description |
-|--------|----------|--------|-------------|
-| GET | `/api/role-auth/admin-only` | AdminOnly | Requires Admin role |
-| GET | `/api/role-auth/manager-or-admin` | ManagerOrAdmin | Requires Manager or Admin |
-| GET | `/api/claims-auth/high-security` | HighSecurityLevel | Requires security level 3+ |
-| GET | `/api/policy-auth/it-department` | ITDepartment | Requires IT department claim |
+
+| Method | Endpoint                            | Policy            | Description                  |
+| ------ | ----------------------------------- | ----------------- | ---------------------------- |
+| GET    | `/api/role-auth/admin-only`       | AdminOnly         | Requires Admin role          |
+| GET    | `/api/role-auth/manager-or-admin` | ManagerOrAdmin    | Requires Manager or Admin    |
+| GET    | `/api/claims-auth/high-security`  | HighSecurityLevel | Requires security level 3+   |
+| GET    | `/api/policy-auth/it-department`  | ITDepartment      | Requires IT department claim |
 
 ### API Versioning Examples
-| Method | Endpoint | Version | Description |
-|--------|----------|---------|-------------|
-| GET | `/api/v1/books` | 1.0 | Version 1 books endpoint |
-| GET | `/api/v2/books` | 2.0 | Version 2 books endpoint |
-| GET | `/api/books?version=1.0` | 1.0 | Query string versioning |
-| GET | `/api/books` (X-Version: 2.0) | 2.0 | Header-based versioning |
+
+| Method | Endpoint                        | Version | Description              |
+| ------ | ------------------------------- | ------- | ------------------------ |
+| GET    | `/api/v1/books`               | 1.0     | Version 1 books endpoint |
+| GET    | `/api/v2/books`               | 2.0     | Version 2 books endpoint |
+| GET    | `/api/books?version=1.0`      | 1.0     | Query string versioning  |
+| GET    | `/api/books` (X-Version: 2.0) | 2.0     | Header-based versioning  |
 
 ## 🧪 **Testing the API**
 
 ### Sample API Calls
 
 #### 1. Get All Books
+
 ```http
 GET https://localhost:7000/api/books?page=1&pageSize=5
 ```
 
 #### 2. Login and Get Token
+
 ```http
 POST https://localhost:7000/api/v1/auth/login
 Content-Type: application/json
@@ -177,6 +190,7 @@ Content-Type: application/json
 ```
 
 #### 3. Create a New Book (Authenticated)
+
 ```http
 POST https://localhost:7000/api/books
 Authorization: Bearer <your-jwt-token>
@@ -197,6 +211,7 @@ Content-Type: application/json
 ```
 
 #### 4. Test Authorization
+
 ```http
 GET https://localhost:7000/api/role-auth/admin-only
 Authorization: Bearer <admin-jwt-token>
@@ -215,6 +230,7 @@ The API demonstrates multiple routing approaches:
 ## 🌐 **CORS Configuration**
 
 Multiple CORS policies configured:
+
 - **AllowAll**: Development policy (allows all origins)
 - **SpecificOrigins**: Production policy (specific allowed origins)
 - **RestrictivePolicy**: Limited methods and headers
@@ -224,6 +240,7 @@ Test CORS with the included HTML page: `/wwwroot/cors-test.html`
 ## ⚠️ **Error Handling**
 
 Comprehensive global exception handling with:
+
 - **Structured Error Responses**: Consistent error format
 - **Detailed Logging**: Request tracking and correlation IDs
 - **Environment-Specific Details**: Stack traces in development
@@ -233,7 +250,8 @@ Comprehensive global exception handling with:
 ## 📖 **Documentation**
 
 Detailed documentation available in the `/doc` folder:
-- [Authentication & Authorization Guide](doc/AUTHENTICATION-GUIDE.md)
+
+- [Authentication &amp; Authorization Guide](doc/AUTHENTICATION-GUIDE.md)
 - [API Versioning Guide](doc/API-VERSIONING-GUIDE.md)
 - [Routing Patterns Guide](doc/ROUTING-GUIDE.md)
 - [CORS Configuration Guide](doc/CORS-README.md)
@@ -243,7 +261,9 @@ Detailed documentation available in the `/doc` folder:
 ## 🔧 **Configuration**
 
 ### JWT Configuration
+
 Configure JWT settings in `appsettings.json`:
+
 ```json
 {
   "Jwt": {
@@ -256,11 +276,13 @@ Configure JWT settings in `appsettings.json`:
 ```
 
 ### CORS Configuration
+
 Modify CORS policies in `Program.cs` for production deployment.
 
 ## 🚀 **Deployment**
 
 ### Docker (Optional)
+
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
@@ -285,6 +307,7 @@ ENTRYPOINT ["dotnet", "WebCoreAPI.dll"]
 ```
 
 ### IIS Deployment
+
 1. Publish the application: `dotnet publish -c Release`
 2. Copy published files to IIS wwwroot
 3. Configure IIS with ASP.NET Core Module
@@ -297,17 +320,6 @@ ENTRYPOINT ["dotnet", "WebCoreAPI.dll"]
 3. Commit your changes: `git commit -m 'Add amazing feature'`
 4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
-
-## 📄 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 **Support**
-
-- 📧 **Email**: [support@example.com](mailto:support@example.com)
-- 📖 **Documentation**: [Wiki](https://github.com/yogesh-grl/WebApiCore/wiki)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yogesh-grl/WebApiCore/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yogesh-grl/WebApiCore/discussions)
 
 ## 🏷️ **Tags**
 
