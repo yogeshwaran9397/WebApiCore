@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "z9RcTd87xnM=",
+  "success": true,
+  "projectFilePath": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebCoreAPI\\WebCoreAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yogesh\\.nuget\\packages\\asp.versioning.abstractions\\8.0.0\\asp.versioning.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\asp.versioning.http\\8.0.0\\asp.versioning.http.8.0.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\asp.versioning.mvc\\8.0.0\\asp.versioning.mvc.8.0.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\8.0.0\\asp.versioning.mvc.apiexplorer.8.0.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.9\\microsoft.aspnetcore.authentication.jwtbearer.9.0.9.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.14.0\\microsoft.identitymodel.abstractions.8.14.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.14.0\\microsoft.identitymodel.jsonwebtokens.8.14.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.identitymodel.logging\\8.14.0\\microsoft.identitymodel.logging.8.14.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.0.1\\microsoft.identitymodel.protocols.8.0.1.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.0.1\\microsoft.identitymodel.protocols.openidconnect.8.0.1.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.14.0\\microsoft.identitymodel.tokens.8.14.0.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\Yogesh\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.14.0\\system.identitymodel.tokens.jwt.8.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}
