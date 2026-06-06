@@ -112,16 +112,24 @@ public class AdvancedRoutingController : ControllerBase
     /// Route: /advanced-routing/price/{price}
     /// Constraint: price must be a decimal >= 0.01
     /// </summary>
-    [HttpGet("price/{price:decimal:min(0.01)}")]
+    // NOTE: the built-in min()/max()/range() route constraints only accept INTEGERS.
+    // For a decimal minimum we constrain the type with :decimal and check the value
+    // inside the action (returning 400 if it's out of range).
+    [HttpGet("price/{price:decimal}")]
     public IActionResult GetByPrice(decimal price)
     {
         _logger.LogInformation("AdvancedRouting: Price constraint - {Price}", price);
+
+        if (price < 0.01m)
+        {
+            return BadRequest(new { Message = "Price must be a decimal >= 0.01" });
+        }
 
         return Ok(new
         {
             Message = $"Price ${price:F2} is valid",
             Route = $"/advanced-routing/price/{price}",
-            Constraint = "decimal:min(0.01)",
+            Constraint = "decimal (>= 0.01 enforced in code)",
             Price = price,
             FormattedPrice = price.ToString("C", CultureInfo.GetCultureInfo("en-US"))
         });
@@ -407,7 +415,7 @@ public class AdvancedRoutingController : ControllerBase
                 "/advanced-routing/username/{username:length(3,20)}",
                 "/advanced-routing/guid/{id:guid}",
                 "/advanced-routing/date/{date:datetime}",
-                "/advanced-routing/price/{price:decimal:min(0.01)}",
+                "/advanced-routing/price/{price:decimal}",
                 "/advanced-routing/isbn/{isbn:regex pattern}",
                 "/advanced-routing/search/{query}/page/{page?}/size/{size?}",
                 "/advanced-routing/files/{*filepath}",

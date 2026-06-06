@@ -1,10 +1,15 @@
 using Asp.Versioning;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebCoreAPI.Authorization;
+using WebCoreAPI.Filters;
+using WebCoreAPI.Models.Dtos;
 using WebCoreAPI.Services;
+using WebCoreAPI.Services.Lifetimes;
+using WebCoreAPI.Validators;
 using WebCoreAPI.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,12 +19,37 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddControllers();
+// AddXmlSerializerFormatters enables CONTENT NEGOTIATION to XML (Accept: application/xml).
+builder.Services.AddControllers()
+    .AddXmlSerializerFormatters();
 builder.Services.AddOpenApi();
+
+// Swagger UI (Swashbuckle) - interactive API docs at /swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Caching services
+builder.Services.AddMemoryCache();        // In-memory cache (IMemoryCache)
+builder.Services.AddResponseCaching();    // HTTP response caching middleware
 
 // Add custom services
 builder.Services.AddScoped<JwtTokenService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<SecurityService>();
+
+// DI LIFETIME DEMO services - one of each lifetime, registered to the matching method.
+builder.Services.AddSingleton<ISingletonGuidService, SingletonGuidService>();
+builder.Services.AddScoped<IScopedGuidService, ScopedGuidService>();
+builder.Services.AddTransient<ITransientGuidService, TransientGuidService>();
+
+// FluentValidation - register validators so they can be injected as IValidator<T>.
+builder.Services.AddScoped<IValidator<ProductInput>, ProductDtoValidator>();
+
+// Filters - registered in DI so [ServiceFilter]/[TypeFilter] can resolve them.
+builder.Services.AddScoped<LoggingActionFilter>();
+builder.Services.AddScoped<TimingResourceFilter>();
+builder.Services.AddScoped<CustomResultFilter>();
+builder.Services.AddScoped<DemoExceptionFilter>();
 
 // Configure JWT Authentication
 var jwtKey = builder.Configuration["Jwt:Key"] ?? "YourSuperSecretKeyThatShouldBeAtLeast32Characters!";
@@ -208,6 +238,14 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    // Swagger interactive docs at /swagger (development only, for security).
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebCoreAPI v1");
+        c.RoutePrefix = "swagger";
+    });
 }
 
 app.UseHttpsRedirection();
@@ -220,6 +258,9 @@ app.UseStaticFiles();
 
 // Use CORS middleware (must be before authentication)
 app.UseCors("AllowAll"); // You can change this to use different policies
+
+// Response caching middleware (must be before endpoints, after CORS).
+app.UseResponseCaching();
 
 // Authentication & Authorization middleware (order matters!)
 app.UseAuthentication();

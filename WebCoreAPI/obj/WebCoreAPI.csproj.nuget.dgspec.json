@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj": {}
+    "D:\\Apps\\source-code\\Yogesh\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj": {}
   },
   "projects": {
-    "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj": {
+    "D:\\Apps\\source-code\\Yogesh\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj",
+        "projectUniqueName": "D:\\Apps\\source-code\\Yogesh\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj",
         "projectName": "WebCoreAPI",
-        "projectPath": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj",
-        "packagesPath": "C:\\Users\\Yogesh\\.nuget\\packages\\",
-        "outputPath": "E:\\Source Code\\Yogesh\\Playground\\WebCoreAPI\\WebApiCore\\WebCoreAPI\\obj\\",
+        "projectPath": "D:\\Apps\\source-code\\Yogesh\\WebApiCore\\WebCoreAPI\\WebCoreAPI.csproj",
+        "packagesPath": "C:\\Users\\GRL\\.nuget\\packages\\",
+        "outputPath": "D:\\Apps\\source-code\\Yogesh\\WebApiCore\\WebCoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Yogesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GRL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.9, )"
@@ -65,6 +69,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.9, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[7.2.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -90,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

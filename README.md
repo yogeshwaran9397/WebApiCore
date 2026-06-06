@@ -6,6 +6,25 @@
 
 A comprehensive ASP.NET Core 9.0 Web API demonstration project showcasing modern web API development patterns, authentication, authorization, API versioning, CORS configuration, routing strategies, and comprehensive error handling.
 
+> 📚 **New to ASP.NET Core Web API?** Start with the **[Visual Learning Guide](LEARNING-GUIDE.md)** — every curriculum topic explained with analogies, diagrams, and memory aids, each mapped to a **live endpoint you can run in this project**.
+
+## 🧪 **Learning Demo Endpoints**
+
+These endpoints exist purely to make each concept tangible. Run the app and open **`/swagger`** to try them.
+
+| Topic | Endpoint(s) | What it shows |
+| ----- | ----------- | ------------- |
+| DI Lifetimes | `GET /api/lifetimes` | Singleton vs Scoped vs Transient (call twice & compare GUIDs) |
+| Status Codes | `GET /api/status-codes/{200,404,500,…}` | Every common HTTP status code |
+| Model Binding | `/api/binding/{route,query,header,body,form}` | `[FromRoute/Query/Header/Body/Form]` + content negotiation |
+| HTTP Methods | `/api/http-methods` | GET/POST/PUT/PATCH/DELETE/HEAD/OPTIONS (full CRUD) |
+| Validation | `POST /api/validation/{data-annotations,fluent}` | Data Annotations vs FluentValidation |
+| Caching | `GET /api/caching/{memory,response,no-cache}` | In-memory + HTTP response caching |
+| Logging | `GET /api/logging/{all-levels,exception,scope}` | `ILogger` levels, exceptions, scopes |
+| Filters | `GET /api/filters/{pipeline,exception}` | Resource/Action/Result/Exception filter pipeline |
+| Security | `POST /api/security/{hash,encrypt,hmac}` | Password hashing, AES, HMAC |
+| Swagger | `/swagger` | Interactive API docs |
+
 ## 🚀 **Features**
 
 ### Core API Features
