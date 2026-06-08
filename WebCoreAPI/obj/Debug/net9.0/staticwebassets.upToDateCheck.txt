@@ -1,0 +1,2 @@
+wwwroot\cors-test.html
+D:\Apps\source-code\Yogesh\WebApiCore\WebCoreAPI\wwwroot\cors-test.html

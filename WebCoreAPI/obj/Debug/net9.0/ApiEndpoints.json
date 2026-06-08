@@ -1,0 +1,5294 @@
+[
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "AdminDashboard",
+    "RelativePath": "admin/books-attr/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetByAge",
+    "RelativePath": "advanced-routing/age/{age}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "age",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetProductsByCategory",
+    "RelativePath": "advanced-routing/categories/{categoryId}/products/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "ComplexConstraints",
+    "RelativePath": "advanced-routing/complex/{value}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetByCoordinates",
+    "RelativePath": "advanced-routing/coordinates/{coordinates}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "coordinates",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetByDate",
+    "RelativePath": "advanced-routing/date/{date}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetRoutingDebugInfo",
+    "RelativePath": "advanced-routing/debug",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetFile",
+    "RelativePath": "advanced-routing/files/{filepath}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filepath",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetByGuid",
+    "RelativePath": "advanced-routing/guid/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetByISBN",
+    "RelativePath": "advanced-routing/isbn/{isbn}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "isbn",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetByPrice",
+    "RelativePath": "advanced-routing/price/{price}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "price",
+        "Type": "System.Decimal",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetProduct",
+    "RelativePath": "advanced-routing/products/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetProduct"
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "DeleteProduct",
+    "RelativePath": "advanced-routing/products/{id}/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "EditProduct",
+    "RelativePath": "advanced-routing/products/{id}/edit",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "SearchWithOptionalParams",
+    "RelativePath": "advanced-routing/search/{query}/page/{page}/size/{size}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AdvancedRoutingController",
+    "Method": "GetByUsername",
+    "RelativePath": "advanced-routing/username/{username}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorsController",
+    "Method": "GetAuthors",
+    "RelativePath": "api/Authors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Models.Author, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorsController",
+    "Method": "CreateAuthor",
+    "RelativePath": "api/Authors",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateAuthorRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Author",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorsController",
+    "Method": "GetAuthor",
+    "RelativePath": "api/Authors/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Author",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorsController",
+    "Method": "UpdateAuthor",
+    "RelativePath": "api/Authors/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateAuthorRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorsController",
+    "Method": "DeleteAuthor",
+    "RelativePath": "api/Authors/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorsController",
+    "Method": "GetAuthorBooks",
+    "RelativePath": "api/Authors/{id}/books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorsController",
+    "Method": "SearchAuthors",
+    "RelativePath": "api/Authors/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "nationality",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Models.Author, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ModelBindingController",
+    "Method": "FromBodyExample",
+    "RelativePath": "api/binding/body",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "WebCoreAPI.Models.Dtos.ProductDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ModelBindingController",
+    "Method": "Combined",
+    "RelativePath": "api/binding/combined/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "product",
+        "Type": "WebCoreAPI.Models.Dtos.ProductDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ModelBindingController",
+    "Method": "FromFormExample",
+    "RelativePath": "api/binding/form",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ModelBindingController",
+    "Method": "FromHeaderExample",
+    "RelativePath": "api/binding/header",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "X-Client-Id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ModelBindingController",
+    "Method": "ContentNegotiation",
+    "RelativePath": "api/binding/negotiation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "WebCoreAPI.Models.Dtos.ProductDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ModelBindingController",
+    "Method": "FromQueryExample",
+    "RelativePath": "api/binding/query",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ModelBindingController",
+    "Method": "FromRouteExample",
+    "RelativePath": "api/binding/route/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "GetBooks",
+    "RelativePath": "api/books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Controllers.V1.BookV1, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "CreateBook",
+    "RelativePath": "api/books",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "book",
+        "Type": "WebCoreAPI.Controllers.V1.CreateBookV1Request",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Controllers.V1.BookV1",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.BooksController",
+    "Method": "GetBooks",
+    "RelativePath": "api/Books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Models.Book, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.BooksController",
+    "Method": "CreateBook",
+    "RelativePath": "api/Books",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateBookRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Book",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "GetBook",
+    "RelativePath": "api/books/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Controllers.V1.BookV1",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.BooksController",
+    "Method": "GetBook",
+    "RelativePath": "api/Books/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Book",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.BooksController",
+    "Method": "UpdateBook",
+    "RelativePath": "api/Books/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateBookRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.BooksController",
+    "Method": "DeleteBook",
+    "RelativePath": "api/Books/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "SearchBooks",
+    "RelativePath": "api/books/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Controllers.V1.BookV1, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.BooksController",
+    "Method": "SearchBooks",
+    "RelativePath": "api/Books/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "author",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "isbn",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Models.Book, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "GetVersionInfo",
+    "RelativePath": "api/books/version-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CachingController",
+    "Method": "GetWithMemoryCache",
+    "RelativePath": "api/caching/memory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CachingController",
+    "Method": "ClearMemoryCache",
+    "RelativePath": "api/caching/memory",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CachingController",
+    "Method": "GetWithoutCache",
+    "RelativePath": "api/caching/no-cache",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CachingController",
+    "Method": "GetWithResponseCache",
+    "RelativePath": "api/caching/response",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CategoriesController",
+    "Method": "GetCategories",
+    "RelativePath": "api/Categories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Models.Category, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CategoriesController",
+    "Method": "CreateCategory",
+    "RelativePath": "api/Categories",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateCategoryRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Category",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CategoriesController",
+    "Method": "GetCategory",
+    "RelativePath": "api/Categories/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Category",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CategoriesController",
+    "Method": "UpdateCategory",
+    "RelativePath": "api/Categories/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateCategoryRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CategoriesController",
+    "Method": "DeleteCategory",
+    "RelativePath": "api/Categories/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CategoriesController",
+    "Method": "GetCategoryBooks",
+    "RelativePath": "api/Categories/{id}/books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CategoriesController",
+    "Method": "GetCategoryStats",
+    "RelativePath": "api/Categories/stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CorsExampleController",
+    "Method": "PostBookOrder",
+    "RelativePath": "api/CorsExample/book-order",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.BookOrderRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CorsExampleController",
+    "Method": "GetWithGlobalPolicy",
+    "RelativePath": "api/CorsExample/global",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CorsExampleController",
+    "Method": "GetWithoutCors",
+    "RelativePath": "api/CorsExample/no-cors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CorsExampleController",
+    "Method": "PreflightTest",
+    "RelativePath": "api/CorsExample/preflight-test",
+    "HttpMethod": "OPTIONS",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CorsExampleController",
+    "Method": "PutWithPreflight",
+    "RelativePath": "api/CorsExample/preflight-test",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "System.Object",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CorsExampleController",
+    "Method": "GetWithRestrictivePolicy",
+    "RelativePath": "api/CorsExample/restrictive",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.CorsExampleController",
+    "Method": "GetWithSpecificPolicy",
+    "RelativePath": "api/CorsExample/specific",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.FiltersDemoController",
+    "Method": "ThrowsException",
+    "RelativePath": "api/filters/exception",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.FiltersDemoController",
+    "Method": "Pipeline",
+    "RelativePath": "api/filters/pipeline",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HttpMethodsController",
+    "Method": "GetAll",
+    "RelativePath": "api/http-methods",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HttpMethodsController",
+    "Method": "Create",
+    "RelativePath": "api/http-methods",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "WebCoreAPI.Models.Dtos.ProductDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HttpMethodsController",
+    "Method": "Options",
+    "RelativePath": "api/http-methods",
+    "HttpMethod": "OPTIONS",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HttpMethodsController",
+    "Method": "GetById",
+    "RelativePath": "api/http-methods/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HttpMethodsController",
+    "Method": "Replace",
+    "RelativePath": "api/http-methods/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "product",
+        "Type": "WebCoreAPI.Models.Dtos.ProductDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HttpMethodsController",
+    "Method": "Patch",
+    "RelativePath": "api/http-methods/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patch",
+        "Type": "WebCoreAPI.Controllers.HttpMethodsController\u002BProductPatch",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HttpMethodsController",
+    "Method": "Remove",
+    "RelativePath": "api/http-methods/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HttpMethodsController",
+    "Method": "Head",
+    "RelativePath": "api/http-methods/{id}",
+    "HttpMethod": "HEAD",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.LifetimesController",
+    "Method": "Get",
+    "RelativePath": "api/Lifetimes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.LoggingDemoController",
+    "Method": "LogAllLevels",
+    "RelativePath": "api/logging/all-levels",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.LoggingDemoController",
+    "Method": "LogException",
+    "RelativePath": "api/logging/exception",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.LoggingDemoController",
+    "Method": "LogWithScope",
+    "RelativePath": "api/logging/scope",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.SecurityDemoController",
+    "Method": "Encrypt",
+    "RelativePath": "api/security/encrypt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "WebCoreAPI.Controllers.SecurityDemoController\u002BTextRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.SecurityDemoController",
+    "Method": "Hash",
+    "RelativePath": "api/security/hash",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "WebCoreAPI.Controllers.SecurityDemoController\u002BPasswordRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.SecurityDemoController",
+    "Method": "Hmac",
+    "RelativePath": "api/security/hmac",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "WebCoreAPI.Controllers.SecurityDemoController\u002BTextRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Ok200",
+    "RelativePath": "api/status-codes/200",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Created201",
+    "RelativePath": "api/status-codes/201",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Accepted202",
+    "RelativePath": "api/status-codes/202",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "NoContent204",
+    "RelativePath": "api/status-codes/204",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Moved301",
+    "RelativePath": "api/status-codes/301",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Found302",
+    "RelativePath": "api/status-codes/302",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "NotModified304",
+    "RelativePath": "api/status-codes/304",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Bad400",
+    "RelativePath": "api/status-codes/400",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Unauthorized401",
+    "RelativePath": "api/status-codes/401",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Forbidden403",
+    "RelativePath": "api/status-codes/403",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "NotFound404",
+    "RelativePath": "api/status-codes/404",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "MethodNotAllowed405",
+    "RelativePath": "api/status-codes/405",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "ServerError500",
+    "RelativePath": "api/status-codes/500",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "NotImplemented501",
+    "RelativePath": "api/status-codes/501",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "Unavailable503",
+    "RelativePath": "api/status-codes/503",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.StatusCodesController",
+    "Method": "GatewayTimeout504",
+    "RelativePath": "api/status-codes/504",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "VersionTest",
+    "RelativePath": "api/v{version}/books-attr/version-test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetClaimsMatrix",
+    "RelativePath": "api/v1/auth-demo/claims-matrix",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetComprehensiveTest",
+    "RelativePath": "api/v1/auth-demo/comprehensive-test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetAuthorizationOverview",
+    "RelativePath": "api/v1/auth-demo/overview",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetPolicyMatrix",
+    "RelativePath": "api/v1/auth-demo/policy-matrix",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetRoleMatrix",
+    "RelativePath": "api/v1/auth-demo/role-matrix",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetTokenInfo",
+    "RelativePath": "api/v1/auth-demo/token-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "GetAuthInfo",
+    "RelativePath": "api/v1/auth/info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/v1/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Models.Auth.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Auth.AuthResponse",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 401
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "api/v1/auth/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "GetCurrentUser",
+    "RelativePath": "api/v1/auth/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Auth.User",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 401
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/v1/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Models.Auth.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Auth.AuthResponse",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "GetBooks",
+    "RelativePath": "api/v1/books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Controllers.V1.BookV1, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "CreateBook",
+    "RelativePath": "api/v1/books",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "book",
+        "Type": "WebCoreAPI.Controllers.V1.CreateBookV1Request",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Controllers.V1.BookV1",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "GetBook",
+    "RelativePath": "api/v1/books/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Controllers.V1.BookV1",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "SearchBooks",
+    "RelativePath": "api/v1/books/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Controllers.V1.BookV1, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=1.0",
+          "application/json; version=1.0",
+          "text/json; version=1.0",
+          "application/xml; version=1.0",
+          "text/xml; version=1.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V1.BooksV1Controller",
+    "Method": "GetVersionInfo",
+    "RelativePath": "api/v1/books/version-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetCompositeClaimsInfo",
+    "RelativePath": "api/v1/claims-demo/composite-claims",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetCustomValidationInfo",
+    "RelativePath": "api/v1/claims-demo/custom-validation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetEmployeeSpecificInfo",
+    "RelativePath": "api/v1/claims-demo/employee/{employeeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetExecutiveInfo",
+    "RelativePath": "api/v1/claims-demo/executive-access",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetHighSecurityInfo",
+    "RelativePath": "api/v1/claims-demo/high-security",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetITDepartmentInfo",
+    "RelativePath": "api/v1/claims-demo/it-department-only",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetMyClaims",
+    "RelativePath": "api/v1/claims-demo/my-claims",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetRegionalData",
+    "RelativePath": "api/v1/claims-demo/regional-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerArgumentException",
+    "RelativePath": "api/v1/exception-demo/argument-error/{value}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerAuthenticatedUserException",
+    "RelativePath": "api/v1/exception-demo/authenticated-error",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerBusinessRuleException",
+    "RelativePath": "api/v1/exception-demo/business-rule",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.OrderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerConflictException",
+    "RelativePath": "api/v1/exception-demo/conflict",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerExternalServiceException",
+    "RelativePath": "api/v1/exception-demo/external-service",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerForbiddenException",
+    "RelativePath": "api/v1/exception-demo/forbidden",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "GetExceptionInfo",
+    "RelativePath": "api/v1/exception-demo/info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerInternalError",
+    "RelativePath": "api/v1/exception-demo/internal-error",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerMultipleErrors",
+    "RelativePath": "api/v1/exception-demo/multiple-errors",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "WebCoreAPI.Controllers.ComplexModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerNotFoundException",
+    "RelativePath": "api/v1/exception-demo/not-found/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerNullReferenceException",
+    "RelativePath": "api/v1/exception-demo/null-reference",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerRateLimitException",
+    "RelativePath": "api/v1/exception-demo/rate-limit",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerTimeoutException",
+    "RelativePath": "api/v1/exception-demo/timeout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerUnauthorizedException",
+    "RelativePath": "api/v1/exception-demo/unauthorized",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerValidationError",
+    "RelativePath": "api/v1/exception-demo/validation-error",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "WebCoreAPI.Controllers.TestModel",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerExceptionWithCorrelation",
+    "RelativePath": "api/v1/exception-demo/with-correlation/{correlationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "correlationId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetHighLevelManagerData",
+    "RelativePath": "api/v1/policy-demo/high-level-manager",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetITDepartmentInfo",
+    "RelativePath": "api/v1/policy-demo/it-department",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetNorthAmericaData",
+    "RelativePath": "api/v1/policy-demo/north-america-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSecurityLevel2Info",
+    "RelativePath": "api/v1/policy-demo/security-level-2",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSecurityLevel4Info",
+    "RelativePath": "api/v1/policy-demo/security-level-4",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSecurityLevel5Info",
+    "RelativePath": "api/v1/policy-demo/security-level-5",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSeniorStaffData",
+    "RelativePath": "api/v1/policy-demo/senior-staff",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSystemAdminData",
+    "RelativePath": "api/v1/policy-demo/system-admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetUserManagementInfo",
+    "RelativePath": "api/v1/policy-demo/user-management",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "CreateUser",
+    "RelativePath": "api/v1/policy-demo/user-management",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userData",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetAdminOnlyInfo",
+    "RelativePath": "api/v1/role-demo/admin-only",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetAuthenticatedInfo",
+    "RelativePath": "api/v1/role-demo/authenticated",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetManagerInfo",
+    "RelativePath": "api/v1/role-demo/manager-or-admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetMultipleAuthInfo",
+    "RelativePath": "api/v1/role-demo/multiple-auth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetPublicInfo",
+    "RelativePath": "api/v1/role-demo/public",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetRoleHierarchy",
+    "RelativePath": "api/v1/role-demo/role-hierarchy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetSupportInfo",
+    "RelativePath": "api/v1/role-demo/support-access",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetUserInfo",
+    "RelativePath": "api/v1/role-demo/user-or-above",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetClaimsMatrix",
+    "RelativePath": "api/v2/auth-demo/claims-matrix",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetComprehensiveTest",
+    "RelativePath": "api/v2/auth-demo/comprehensive-test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetAuthorizationOverview",
+    "RelativePath": "api/v2/auth-demo/overview",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetPolicyMatrix",
+    "RelativePath": "api/v2/auth-demo/policy-matrix",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetRoleMatrix",
+    "RelativePath": "api/v2/auth-demo/role-matrix",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthorizationDemoController",
+    "Method": "GetTokenInfo",
+    "RelativePath": "api/v2/auth-demo/token-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Comprehensive Authorization Demo"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "GetAuthInfo",
+    "RelativePath": "api/v2/auth/info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/v2/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Models.Auth.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Auth.AuthResponse",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 401
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "api/v2/auth/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "GetCurrentUser",
+    "RelativePath": "api/v2/auth/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Auth.User",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 401
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/v2/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Models.Auth.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Models.Auth.AuthResponse",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Object",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V2.BooksV2Controller",
+    "Method": "GetBooks",
+    "RelativePath": "api/v2/books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "genre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "minPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "minRating",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Controllers.V2.PagedResult\u00601[[WebCoreAPI.Controllers.V2.BookV2, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V2.BooksV2Controller",
+    "Method": "GetBook",
+    "RelativePath": "api/v2/books/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Controllers.V2.BookV2",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V2.BooksV2Controller",
+    "Method": "GetGenres",
+    "RelativePath": "api/v2/books/genres",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebCoreAPI.Controllers.V2.GenreInfo, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V2.BooksV2Controller",
+    "Method": "SearchBooks",
+    "RelativePath": "api/v2/books/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchIn",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "exactMatch",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebCoreAPI.Controllers.V2.SearchResult\u00601[[WebCoreAPI.Controllers.V2.BookV2, WebCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain; version=2.0",
+          "application/json; version=2.0",
+          "text/json; version=2.0",
+          "application/xml; version=2.0",
+          "text/xml; version=2.0"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.V2.BooksV2Controller",
+    "Method": "GetVersionInfo",
+    "RelativePath": "api/v2/books/version-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetCompositeClaimsInfo",
+    "RelativePath": "api/v2/claims-demo/composite-claims",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetCustomValidationInfo",
+    "RelativePath": "api/v2/claims-demo/custom-validation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetEmployeeSpecificInfo",
+    "RelativePath": "api/v2/claims-demo/employee/{employeeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetExecutiveInfo",
+    "RelativePath": "api/v2/claims-demo/executive-access",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetHighSecurityInfo",
+    "RelativePath": "api/v2/claims-demo/high-security",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetITDepartmentInfo",
+    "RelativePath": "api/v2/claims-demo/it-department-only",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetMyClaims",
+    "RelativePath": "api/v2/claims-demo/my-claims",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ClaimsBasedAuthController",
+    "Method": "GetRegionalData",
+    "RelativePath": "api/v2/claims-demo/regional-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Claims-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerArgumentException",
+    "RelativePath": "api/v2/exception-demo/argument-error/{value}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerAuthenticatedUserException",
+    "RelativePath": "api/v2/exception-demo/authenticated-error",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerBusinessRuleException",
+    "RelativePath": "api/v2/exception-demo/business-rule",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.OrderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerConflictException",
+    "RelativePath": "api/v2/exception-demo/conflict",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerExternalServiceException",
+    "RelativePath": "api/v2/exception-demo/external-service",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerForbiddenException",
+    "RelativePath": "api/v2/exception-demo/forbidden",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "GetExceptionInfo",
+    "RelativePath": "api/v2/exception-demo/info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerInternalError",
+    "RelativePath": "api/v2/exception-demo/internal-error",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerMultipleErrors",
+    "RelativePath": "api/v2/exception-demo/multiple-errors",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "WebCoreAPI.Controllers.ComplexModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerNotFoundException",
+    "RelativePath": "api/v2/exception-demo/not-found/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerNullReferenceException",
+    "RelativePath": "api/v2/exception-demo/null-reference",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerRateLimitException",
+    "RelativePath": "api/v2/exception-demo/rate-limit",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerTimeoutException",
+    "RelativePath": "api/v2/exception-demo/timeout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerUnauthorizedException",
+    "RelativePath": "api/v2/exception-demo/unauthorized",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerValidationError",
+    "RelativePath": "api/v2/exception-demo/validation-error",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "WebCoreAPI.Controllers.TestModel",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ExceptionDemoController",
+    "Method": "TriggerExceptionWithCorrelation",
+    "RelativePath": "api/v2/exception-demo/with-correlation/{correlationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "correlationId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Exception Handling"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetHighLevelManagerData",
+    "RelativePath": "api/v2/policy-demo/high-level-manager",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetITDepartmentInfo",
+    "RelativePath": "api/v2/policy-demo/it-department",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetNorthAmericaData",
+    "RelativePath": "api/v2/policy-demo/north-america-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSecurityLevel2Info",
+    "RelativePath": "api/v2/policy-demo/security-level-2",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSecurityLevel4Info",
+    "RelativePath": "api/v2/policy-demo/security-level-4",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSecurityLevel5Info",
+    "RelativePath": "api/v2/policy-demo/security-level-5",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSeniorStaffData",
+    "RelativePath": "api/v2/policy-demo/senior-staff",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetSystemAdminData",
+    "RelativePath": "api/v2/policy-demo/system-admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "GetUserManagementInfo",
+    "RelativePath": "api/v2/policy-demo/user-management",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.PolicyBasedAuthController",
+    "Method": "CreateUser",
+    "RelativePath": "api/v2/policy-demo/user-management",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userData",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Policy-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetAdminOnlyInfo",
+    "RelativePath": "api/v2/role-demo/admin-only",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetAuthenticatedInfo",
+    "RelativePath": "api/v2/role-demo/authenticated",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetManagerInfo",
+    "RelativePath": "api/v2/role-demo/manager-or-admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetMultipleAuthInfo",
+    "RelativePath": "api/v2/role-demo/multiple-auth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetPublicInfo",
+    "RelativePath": "api/v2/role-demo/public",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetRoleHierarchy",
+    "RelativePath": "api/v2/role-demo/role-hierarchy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetSupportInfo",
+    "RelativePath": "api/v2/role-demo/support-access",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.RoleBasedAuthController",
+    "Method": "GetUserInfo",
+    "RelativePath": "api/v2/role-demo/user-or-above",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Role-Based Authorization"
+    ]
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ValidationController",
+    "Method": "ValidateWithAnnotations",
+    "RelativePath": "api/validation/data-annotations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "WebCoreAPI.Models.Dtos.ProductDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.ValidationController",
+    "Method": "ValidateWithFluent",
+    "RelativePath": "api/validation/fluent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "WebCoreAPI.Models.Dtos.ProductInput",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "CombinedVersioning",
+    "RelativePath": "api/versioning-demo/api/v1/versioning-demo/combined",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "UrlPathVersioning",
+    "RelativePath": "api/versioning-demo/api/v1/versioning-demo/url-path",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "CombinedVersioning",
+    "RelativePath": "api/versioning-demo/api/v2/versioning-demo/combined",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "UrlPathVersioning",
+    "RelativePath": "api/versioning-demo/api/v2/versioning-demo/url-path",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "CombinedVersioning",
+    "RelativePath": "api/versioning-demo/combined",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "CombinedVersioning",
+    "RelativePath": "api/versioning-demo/combined",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "HeaderVersioning",
+    "RelativePath": "api/versioning-demo/header",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "HeaderVersioning",
+    "RelativePath": "api/versioning-demo/header",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "MediaTypeVersioning",
+    "RelativePath": "api/versioning-demo/media-type",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "MediaTypeVersioning",
+    "RelativePath": "api/versioning-demo/media-type",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "QueryStringVersioning",
+    "RelativePath": "api/versioning-demo/query-string",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "QueryStringVersioning",
+    "RelativePath": "api/versioning-demo/query-string",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "UrlPathVersioning",
+    "RelativePath": "api/versioning-demo/url-path",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.VersioningDemoController",
+    "Method": "UrlPathVersioning",
+    "RelativePath": "api/versioning-demo/url-path",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "BasicAttributeRouting",
+    "RelativePath": "attribute-demo/basic",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "GetBooksByCategoryAndAuthor",
+    "RelativePath": "books-attr/{categoryId}/author/{authorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "authorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "GetBookById",
+    "RelativePath": "books-attr/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "CatchAll",
+    "RelativePath": "books-attr/catch-all/{path}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "path",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "FilterBooks",
+    "RelativePath": "books-attr/filter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "minPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "GetBookByISBN",
+    "RelativePath": "books-attr/isbn/{isbn}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "isbn",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "GetLatestBooks",
+    "RelativePath": "books-attr/latest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "GetBookForManagement",
+    "RelativePath": "books-attr/manage/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "UpdateBookManagement",
+    "RelativePath": "books-attr/manage/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "data",
+        "Type": "System.Object",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "DeleteBookManagement",
+    "RelativePath": "books-attr/manage/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "GetLatestBooks",
+    "RelativePath": "books-attr/newest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "GetLatestBooks",
+    "RelativePath": "books-attr/recent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "SearchBooksWithPagination",
+    "RelativePath": "books-attr/search/{query}/page/{page}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.AttributeRoutingController",
+    "Method": "GetSpecialBook",
+    "RelativePath": "books-attr/special/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "X-Version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetSpecialBook"
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "Index",
+    "RelativePath": "hybrid",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "GetAll",
+    "RelativePath": "hybrid",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "GetById",
+    "RelativePath": "hybrid",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "CompareRouting",
+    "RelativePath": "hybrid",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "CreateItemInCategory",
+    "RelativePath": "hybrid/categories/{categoryId}/items",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "WebCoreAPI.Controllers.CreateItemRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "CompareRoutingAttribute",
+    "RelativePath": "hybrid/compare",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "CustomEndpoint",
+    "RelativePath": "hybrid/custom-endpoint",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "SearchItems",
+    "RelativePath": "hybrid/find",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "GetItemAttribute",
+    "RelativePath": "hybrid/items/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "SearchItems",
+    "RelativePath": "hybrid/lookup",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "GetRouteInfo",
+    "RelativePath": "hybrid/route-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebCoreAPI.Controllers.HybridRoutingController",
+    "Method": "SearchItems",
+    "RelativePath": "hybrid/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

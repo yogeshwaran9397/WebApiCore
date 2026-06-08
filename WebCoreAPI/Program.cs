@@ -22,6 +22,7 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 // AddXmlSerializerFormatters enables CONTENT NEGOTIATION to XML (Accept: application/xml).
 builder.Services.AddControllers()
     .AddXmlSerializerFormatters();
+
 builder.Services.AddOpenApi();
 
 // Swagger UI (Swashbuckle) - interactive API docs at /swagger

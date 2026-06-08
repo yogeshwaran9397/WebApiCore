@@ -97,3 +97,4 @@ D:\Apps\source-code\Yogesh\WebApiCore\WebCoreAPI\bin\Debug\net9.0\FluentValidati
 D:\Apps\source-code\Yogesh\WebApiCore\WebCoreAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Apps\source-code\Yogesh\WebApiCore\WebCoreAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Apps\source-code\Yogesh\WebApiCore\WebCoreAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Apps\source-code\Yogesh\WebApiCore\WebCoreAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

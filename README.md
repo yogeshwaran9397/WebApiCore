@@ -172,10 +172,10 @@ Authorization: Bearer <your-jwt-token>
 
 | Method | Endpoint                            | Policy            | Description                  |
 | ------ | ----------------------------------- | ----------------- | ---------------------------- |
-| GET    | `/api/role-auth/admin-only`       | AdminOnly         | Requires Admin role          |
-| GET    | `/api/role-auth/manager-or-admin` | ManagerOrAdmin    | Requires Manager or Admin    |
-| GET    | `/api/claims-auth/high-security`  | HighSecurityLevel | Requires security level 3+   |
-| GET    | `/api/policy-auth/it-department`  | ITDepartment      | Requires IT department claim |
+| GET    | `/api/v1/role-demo/admin-only`       | AdminOnly         | Requires Admin role          |
+| GET    | `/api/v1/role-demo/manager-or-admin` | ManagerOrAdmin    | Requires Manager or Admin    |
+| GET    | `/api/v1/claims-demo/high-security`  | HighSecurityLevel | Requires security level 3+   |
+| GET    | `/api/v1/policy-demo/it-department`  | ITDepartment      | Requires IT department claim |
 
 ### API Versioning Examples
 
@@ -266,9 +266,28 @@ Comprehensive global exception handling with:
 - **Custom Exception Types**: Domain-specific exceptions
 - **HTTP Status Code Mapping**: Proper status codes for different errors
 
+## 🖥️ **React Test Client**
+
+A **React + Vite** single-page app in [`client/`](client/) calls every endpoint, captures the JWT on login, and auto-attaches it to protected requests — perfect for exploring and demoing the API from a real front-end.
+
+```bash
+# Terminal 1 — API
+dotnet run --project WebCoreAPI        # http://localhost:5274
+
+# Terminal 2 — client
+cd client && npm install && npm run dev # http://localhost:5173
+```
+
+See [`client/README.md`](client/README.md) for details.
+
 ## 📖 **Documentation**
 
-Detailed documentation available in the `/doc` folder:
+Start here for learning & interview prep:
+
+- 🎓 [**Visual Learning Guide**](LEARNING-GUIDE.md) — every topic with analogies, diagrams, memory aids, and a live endpoint.
+- 🧭 [**Full-Stack Walkthrough**](doc/FULLSTACK-WALKTHROUGH.md) — how client + server fit together, the request lifecycle, and **interview Q&A**.
+
+Detailed reference docs in the `/doc` folder:
 
 - [Authentication &amp; Authorization Guide](doc/AUTHENTICATION-GUIDE.md)
 - [API Versioning Guide](doc/API-VERSIONING-GUIDE.md)

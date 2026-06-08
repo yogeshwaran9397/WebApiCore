@@ -26,7 +26,7 @@
 | 14 | [Filters Pipeline](#14-filters-pipeline) | `/api/filters/*` |
 | 15 | [Security & Cryptography](#15-security--cryptography) | `/api/security/*` |
 | 16 | [JWT Authentication](#16-jwt-authentication) | `/api/v1/auth/*` |
-| 17 | [Authorization](#17-authorization) | `/api/role-auth/*` |
+| 17 | [Authorization](#17-authorization) | `/api/v1/role-demo/*` |
 | 18 | [API Versioning](#18-api-versioning) | `/api/v1/books`, `/api/v2/books` |
 | 19 | [CORS](#19-cors) | `/api/corsexample/*` |
 | 20 | [Exception Handling](#20-exception-handling) | `/api/exceptiondemo/*` |
@@ -448,7 +448,7 @@ options.AddPolicy("HighSecurityLevel", p => p.RequireClaim("security_level","3",
 options.AddPolicy("SecurityLevel3", p => p.Requirements.Add(new SecurityLevelRequirement(3)));
 ```
 
-▶️ **See it:** `GET /api/role-auth/admin-only`, `/api/claims-auth/high-security`, `/api/policy-auth/it-department` (with the right user's token).
+▶️ **See it** (log in first, then send the token): `GET /api/v1/role-demo/admin-only`, `/api/v1/claims-demo/high-security`, `/api/v1/policy-demo/it-department`. Log in as `admin` vs `user` to see **200 vs 403**.
 
 ---
 
