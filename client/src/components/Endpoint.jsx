@@ -68,6 +68,7 @@ export default function Endpoint({ def }) {
       headers,
       body: parsedBody,
       auth: def.auth,
+      contentType: def.contentType,
     });
 
     // Side effects: capture token on login, drop it on logout.
@@ -85,6 +86,50 @@ export default function Endpoint({ def }) {
     setLoading(false);
   };
 
+  // Fire def.burst requests in parallel — used to trip the rate limiter.
+  const sendBurst = async () => {
+    setLoading(true);
+    let parsedBody;
+    if (bodyText.trim()) {
+      try { parsedBody = JSON.parse(bodyText); } catch { /* ignore for burst */ }
+    }
+    const n = def.burst;
+    const started = performance.now();
+    const results = await Promise.all(
+      Array.from({ length: n }, () =>
+        call({ method: def.method, path: buildPath(), query, headers, body: parsedBody, auth: def.auth, contentType: def.contentType })
+      )
+    );
+    const durationMs = Math.round(performance.now() - started);
+    const statusCounts = results.reduce((acc, r) => {
+      acc[r.status] = (acc[r.status] || 0) + 1;
+      return acc;
+    }, {});
+    const rejected = results.filter((r) => r.status === 429).length;
+    const rejectedRes = results.find((r) => r.status === 429);
+
+    setRes({
+      status: rejected > 0 ? 429 : results[0]?.status || 0,
+      statusText: `burst ×${n}`,
+      durationMs,
+      method: def.method,
+      finalUrl: results[0]?.finalUrl,
+      headers: rejectedRes?.headers || results[0]?.headers || {},
+      body: {
+        burst: n,
+        allowed: results.filter((r) => r.ok).length,
+        rejected,
+        statusCounts,
+        note:
+          rejected > 0
+            ? `Rate limit tripped — ${rejected}/${n} got 429. Check the Headers tab for Retry-After.`
+            : 'All allowed. Click again immediately (or increase the burst) to trip the limit.',
+      },
+    });
+    setTab('body');
+    setLoading(false);
+  };
+
   const needsAuthButNoToken = def.auth && !token;
 
   return (
@@ -96,6 +141,11 @@ export default function Endpoint({ def }) {
         <button className="send" onClick={send} disabled={loading}>
           {loading ? '…' : 'Send'}
         </button>
+        {def.burst && (
+          <button className="send burst" onClick={sendBurst} disabled={loading} title="Fire many requests at once">
+            Burst ×{def.burst}
+          </button>
+        )}
       </div>
 
       <p className="endpoint-desc">{def.desc}</p>

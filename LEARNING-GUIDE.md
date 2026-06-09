@@ -19,7 +19,8 @@
 | 7 | [Routing](#7-routing) | `/api/advanced-routing/*` |
 | 8 | [HTTP Status Codes](#8-http-status-codes) | `/api/status-codes/*` |
 | 9 | [Model Binding & Content Negotiation](#9-model-binding--content-negotiation) | `/api/binding/*` |
-| 10 | [HTTP Methods (CRUD)](#10-http-methods-crud) | `/api/http-methods` |
+| 10 | [HTTP Methods (CRUD) + JSON Patch](#10-http-methods-crud) | `/api/http-methods` |
+| 10b | [Pagination (Offset vs Cursor)](#10b-pagination--offset-vs-cursor) | `/api/pagination/*` |
 | 11 | [Validation](#11-validation) | `/api/validation/*` |
 | 12 | [Logging](#12-logging) | `/api/logging/*` |
 | 13 | [Caching](#13-caching) | `/api/caching/*` |
@@ -29,6 +30,7 @@
 | 17 | [Authorization](#17-authorization) | `/api/v1/role-demo/*` |
 | 18 | [API Versioning](#18-api-versioning) | `/api/v1/books`, `/api/v2/books` |
 | 19 | [CORS](#19-cors) | `/api/corsexample/*` |
+| 19b | [Rate Limiting (sliding window)](#19b-rate-limiting--sliding-window) | `/api/rate-limit` |
 | 20 | [Exception Handling](#20-exception-handling) | `/api/exceptiondemo/*` |
 
 ---
@@ -276,7 +278,56 @@ return StatusCode(503);   // anything
 > 📁 **PUT vs PATCH** — PUT replaces the **whole file** (send all fields). PATCH edits **a few lines** (send only changes).
 > 🔁 **Safe** = doesn't change data. **Idempotent** = calling 10× = same as 1×. POST is neither.
 
-▶️ **See it:** full CRUD at `/api/http-methods` (try GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS).
+**JSON Patch (RFC 6902)** — the *standard* PATCH format. The body is an **array of operations** instead of a partial object:
+
+```jsonc
+// Content-Type: application/json-patch+json
+[
+  { "op": "replace", "path": "/name",  "value": "New Name" },
+  { "op": "replace", "path": "/price", "value": 49.99 },
+  { "op": "remove",  "path": "/publisher" }
+]
+```
+
+```csharp
+[HttpPatch("json-patch/{id}")]
+public IActionResult JsonPatch(int id, [FromBody] JsonPatchDocument<ProductDto> patch)
+{
+    patch.ApplyTo(product, ModelState);     // apply ops; errors go to ModelState
+    if (!TryValidateModel(product)) return ValidationProblem(ModelState); // re-validate
+    return Ok(product);
+}
+```
+
+> 🧠 Requires the **`Microsoft.AspNetCore.Mvc.NewtonsoftJson`** package (`AddNewtonsoftJson()`) — the JSON Patch input formatter is built on Newtonsoft. Ops you can use: **add, remove, replace, move, copy, test**.
+
+▶️ **See it:** full CRUD at `/api/http-methods` (GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS) and `PATCH /api/http-methods/json-patch/{id}`.
+
+---
+
+## 10b. Pagination — Offset vs Cursor
+
+> 📚 **Analogy.** **Offset** = "give me page 5" — the waiter counts past the first 40 dishes every time. **Cursor** = "give me what comes after *this* dish" — he starts right where you left off.
+
+| | Offset (`?page=2&pageSize=10`) | Cursor / Keyset (`?cursor=...&limit=10`) |
+|-|-------------------------------|------------------------------------------|
+| How | `SKIP (page-1)*size TAKE size` | `WHERE Id > lastSeenId ORDER BY Id TAKE n` |
+| "Jump to page N" | ✅ easy | ❌ sequential only |
+| Deep pages | 🐌 scans/skips everything before | ⚡ index seek, constant speed |
+| Stability if rows inserted/deleted | ❌ can skip/duplicate rows | ✅ stable |
+| Best for | admin tables, small data | infinite scroll, feeds, large data |
+
+```csharp
+// CURSOR: opaque Base64 pointer to the last Id; return one extra to detect "hasMore".
+var slice = data.Where(x => x.Id > afterId).OrderBy(x => x.Id).Take(limit + 1).ToList();
+var hasMore = slice.Count > limit;
+var items = slice.Take(limit).ToList();
+var nextCursor = hasMore ? Encode(items[^1].Id) : null;   // client sends this back
+```
+
+> 🧠 **Memory Aid:** *Offset counts, Cursor points.* Cursors are **opaque** — clients treat `nextCursor` as a black box and just echo it back.
+
+▶️ **See it:** `/api/pagination/offset?page=2&pageSize=5` and `/api/pagination/cursor?limit=5` → copy `nextCursor` into the next call.
 
 ---
 
@@ -487,6 +538,48 @@ app.UseCors("AllowFrontend");   // before auth & endpoints
 > 🧠 The browser sends an **OPTIONS preflight** first to ask "am I allowed?" — that's why `OPTIONS` matters (see §10).
 
 ▶️ **See it:** `wwwroot/cors-test.html` and `/api/corsexample/*`.
+
+---
+
+## 19b. Rate Limiting — Sliding Window
+
+> 🚦 **Analogy — a nightclub with a 1-hour memory.** A bouncer lets in 5 people per 15 minutes. A **fixed window** forgets everyone on the hour, so 5 sneak in at 7:59 and 5 more at 8:00 — 10 in two minutes. A **sliding window** remembers the last 15 minutes continuously, so the limit actually holds.
+
+**Fixed vs Sliding (the key difference):**
+
+```
+Fixed window  |‖‖‖‖‖----|‖‖‖‖‖----|   ← burst allowed across the boundary (5+5)
+Sliding window |‖‖‖‖‖....‖‖‖‖‖....|   ← window slides; oldest segment expires gradually
+               └ 3 segments of 5s; every 5s the oldest 5s of history drops off ┘
+```
+
+**How it's configured here** (`Program.cs`): 5 requests / 15s, split into 3 segments. Every 5s the oldest segment's permits are recycled.
+
+```csharp
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddSlidingWindowLimiter("sliding", opt =>
+    {
+        opt.PermitLimit = 5;                    // max per window
+        opt.Window = TimeSpan.FromSeconds(15);  // window length
+        opt.SegmentsPerWindow = 3;              // 3 x 5s slices
+        opt.QueueLimit = 0;                     // reject immediately, don't queue
+    });
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.OnRejected = async (ctx, ct) => { /* add Retry-After + JSON body */ };
+});
+
+app.UseRateLimiter();                            // after routing/auth, before endpoints
+
+[ApiController, Route("api/rate-limit")]
+[EnableRateLimiting("sliding")]                  // opt IN per controller/action
+public class RateLimitController : ControllerBase { ... }
+// [DisableRateLimiting] opts an action back OUT.
+```
+
+> 🧠 **Memory Aid — `429` = "slow down".** The rejection adds a **`Retry-After`** header telling the client how many seconds to wait. The four built-in limiters: **Fixed Window · Sliding Window · Token Bucket · Concurrency**.
+
+▶️ **See it:** client section **12b** → click **Burst ×8** on `/api/rate-limit` → 5 succeed, 3 return **429**. The `/api/rate-limit/unlimited` endpoint (`[DisableRateLimiting]`) never throttles.
 
 ---
 

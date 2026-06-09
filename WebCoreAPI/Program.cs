@@ -2,8 +2,10 @@ using Asp.Versioning;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Threading.RateLimiting;
 using WebCoreAPI.Authorization;
 using WebCoreAPI.Filters;
 using WebCoreAPI.Models.Dtos;
@@ -20,7 +22,15 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 // AddXmlSerializerFormatters enables CONTENT NEGOTIATION to XML (Accept: application/xml).
+// AddNewtonsoftJson registers the input formatter required for JsonPatchDocument
+// (RFC 6902, media type application/json-patch+json). We force camelCase so the
+// JSON output stays identical to the System.Text.Json default used elsewhere.
 builder.Services.AddControllers()
+    .AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.ContractResolver =
+            new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+    })
     .AddXmlSerializerFormatters();
 
 builder.Services.AddOpenApi();
@@ -233,6 +243,46 @@ builder.Services.AddCors(options =>
         });
 });
 
+// ---------------------------------------------------------------------------
+// RATE LIMITING — SLIDING WINDOW
+// A fixed window (e.g. "5 per minute") resets abruptly, allowing a burst right
+// at the boundary (5 at 0:59 + 5 at 1:00 = 10 in 2 seconds). A SLIDING window
+// splits the window into segments and continuously expires the oldest segment,
+// so the limit holds smoothly across the boundary.
+//
+//   PermitLimit=5, Window=15s, SegmentsPerWindow=3  →  each segment = 5s.
+//   Every 5s the oldest segment's permits are recycled back into the pool.
+// ---------------------------------------------------------------------------
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddSlidingWindowLimiter("sliding", opt =>
+    {
+        opt.PermitLimit = 5;                                  // max requests per window
+        opt.Window = TimeSpan.FromSeconds(15);               // total window length
+        opt.SegmentsPerWindow = 3;                           // window split into 3 x 5s slices
+        opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        opt.QueueLimit = 0;                                  // reject immediately, don't queue
+    });
+
+    // What to send when a request is throttled.
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.OnRejected = async (context, token) =>
+    {
+        // Tell the client how long to wait. Use the limiter's metadata when present,
+        // otherwise fall back to one segment length (Window / SegmentsPerWindow = 5s),
+        // which is the worst-case time until a sliding-window permit frees up.
+        var retrySeconds = context.Lease.TryGetMetadata(MetadataName.RetryAfter, out var retryAfter)
+            ? (int)retryAfter.TotalSeconds
+            : 5;
+        context.HttpContext.Response.Headers.RetryAfter = retrySeconds.ToString();
+
+        context.HttpContext.Response.ContentType = "application/json";
+        await context.HttpContext.Response.WriteAsync(
+            "{\"error\":\"Too Many Requests\",\"message\":\"Sliding-window rate limit exceeded. Please slow down.\"}",
+            token);
+    };
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -266,6 +316,10 @@ app.UseResponseCaching();
 // Authentication & Authorization middleware (order matters!)
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Rate limiting middleware (after routing/auth, before endpoints).
+// Endpoints opt in with [EnableRateLimiting("sliding")].
+app.UseRateLimiter();
 
 // Configure conventional routing
 app.MapControllerRoute(

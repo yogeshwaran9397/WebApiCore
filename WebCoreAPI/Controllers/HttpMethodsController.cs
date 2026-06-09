@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using WebCoreAPI.Models.Dtos;
 
@@ -53,6 +54,28 @@ public class HttpMethodsController : ControllerBase
         if (patch.Price is not null) existing.Price = patch.Price.Value;
         if (patch.Stock is not null) existing.Stock = patch.Stock.Value;
         return Ok(new { method = "PATCH (partial update)", id, product = existing });
+    }
+
+    // PATCH via JSON Patch (RFC 6902) - the STANDARD partial-update format.
+    // Body is a list of operations, e.g.:
+    //   [ { "op": "replace", "path": "/name",  "value": "New Name" },
+    //     { "op": "replace", "path": "/price", "value": 49.99 } ]
+    // Content-Type must be: application/json-patch+json
+    // Supported ops: add, remove, replace, move, copy, test.
+    [HttpPatch("json-patch/{id}")]
+    [Consumes("application/json-patch+json")]
+    public IActionResult JsonPatch(int id, [FromBody] JsonPatchDocument<ProductDto> patchDoc)
+    {
+        if (patchDoc is null) return BadRequest("A JSON Patch document is required.");
+        if (!Store.TryGetValue(id, out var product)) return NotFound();
+
+        // Apply the operations to the object. Any errors (bad path/op) go to ModelState.
+        patchDoc.ApplyTo(product, ModelState);
+
+        // Re-run model validation (Data Annotations on ProductDto) after patching.
+        if (!TryValidateModel(product)) return ValidationProblem(ModelState);
+
+        return Ok(new { method = "PATCH (JSON Patch / RFC 6902)", id, product });
     }
 
     // DELETE (remove) - idempotent: deleting twice is fine

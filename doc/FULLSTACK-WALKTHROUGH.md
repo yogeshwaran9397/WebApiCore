@@ -174,9 +174,15 @@ For each: **where it lives**, **how to demo it**, and a **crisp interview answer
 - **Demo:** client section 4.
 
 ### HTTP Methods
-- **Server:** `HttpMethodsController` — full CRUD + HEAD/OPTIONS.
+- **Server:** `HttpMethodsController` — full CRUD + HEAD/OPTIONS, plus a standard **JSON Patch (RFC 6902)** endpoint (`json-patch/{id}`) using `JsonPatchDocument<T>` (requires `AddNewtonsoftJson()`).
 - **Q: PUT vs PATCH? Idempotent?** "PUT replaces the whole resource (idempotent); PATCH updates sent fields only. GET/PUT/DELETE are idempotent; POST isn't."
-- **Demo:** client section 5.
+- **Q: How do you do a standard partial update?** "JSON Patch — the body is an array of ops (`replace`/`add`/`remove`/`move`/`copy`/`test`) sent as `application/json-patch+json`; `patch.ApplyTo(entity, ModelState)` then re-validate."
+- **Demo:** client section 5 (incl. the JSON Patch card).
+
+### Pagination
+- **Server:** `PaginationController` shows **offset** (`page/pageSize`) and **cursor/keyset** (`?cursor=...&limit=`) with an opaque Base64 `nextCursor`.
+- **Q: Offset vs cursor — when and why?** "Offset is simple and supports 'jump to page N' but is slow on deep pages and can skip/duplicate rows if data changes. Cursor/keyset (`WHERE Id > lastSeen ORDER BY Id LIMIT n`) is index-friendly, constant-speed, and stable — ideal for infinite scroll and large datasets."
+- **Demo:** client section 5b — call cursor with no cursor, then paste `nextCursor` for the next page.
 
 ### Status Codes
 - **Server:** `StatusCodesController` returns each code via `Ok/Created/NoContent/BadRequest/StatusCode`.
@@ -234,6 +240,12 @@ For each: **where it lives**, **how to demo it**, and a **crisp interview answer
 - **Server:** three named policies; `UseCors("AllowAll")` (dev). Preflight handled automatically.
 - **Q: Why does CORS exist / why preflight?** "Browser same-origin policy blocks cross-origin calls unless the server opts in via `Access-Control-Allow-*`. For non-simple requests the browser sends an OPTIONS preflight first."
 - **Demo:** the whole client *is* the CORS demo — it's a cross-origin SPA hitting the API.
+
+### Rate Limiting (sliding window)
+- **Server:** `AddRateLimiter` + `AddSlidingWindowLimiter("sliding", …)` in `Program.cs` (5 req / 15s, 3 segments); `app.UseRateLimiter()`; `RateLimitController` opts in with `[EnableRateLimiting("sliding")]`, and one action opts out with `[DisableRateLimiting]`.
+- **Q: Fixed vs sliding window?** "A fixed window resets abruptly, so you can get a 2× burst across the boundary (5 at 0:59 + 5 at 1:00). A sliding window divides the window into segments and expires the oldest continuously, so the rate holds smoothly. .NET also has token-bucket and concurrency limiters."
+- **Q: What does the server send when throttled?** "HTTP 429 Too Many Requests with a `Retry-After` header telling the client how long to back off."
+- **Demo:** client section 12b → **Burst ×8** → 5 succeed, 3 return 429.
 
 ### Global Exception Handling
 - **Server:** `GlobalExceptionHandlingMiddleware` registered early; returns a consistent JSON error with a correlation id, stack trace only in Development.

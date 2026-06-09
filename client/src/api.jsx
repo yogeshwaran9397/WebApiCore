@@ -56,7 +56,7 @@ export function ApiProvider({ children }) {
    * Never throws for HTTP errors — a 404/500 is data we want to display.
    */
   const call = useCallback(
-    async ({ method = 'GET', path, query, headers = {}, body, auth = false }) => {
+    async ({ method = 'GET', path, query, headers = {}, body, auth = false, contentType }) => {
       // Build the URL with query string.
       const url = new URL(path.replace(/^\//, ''), baseUrl.replace(/\/?$/, '/'));
       if (query) {
@@ -68,7 +68,8 @@ export function ApiProvider({ children }) {
       const finalHeaders = { ...headers };
       let payload;
       if (body !== undefined && body !== null && body !== '') {
-        finalHeaders['Content-Type'] = 'application/json';
+        // Allow a custom content type (e.g. application/json-patch+json for JSON Patch).
+        finalHeaders['Content-Type'] = contentType || 'application/json';
         payload = typeof body === 'string' ? body : JSON.stringify(body);
       }
       if (auth && token) {

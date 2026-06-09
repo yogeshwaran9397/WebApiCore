@@ -368,3 +368,61 @@ The earlier `min(0.01)` route fix means the server now actually starts — worth
 
 ---
 
+
+## 2026-06-09 20:33:50
+
+### User
+
+implement rate limiting with the sliding window
+
+### Assistant
+
+.NET 9 has built-in rate limiting (`Microsoft.AspNetCore.RateLimiting`, no package needed). I'll add a sliding-window limiter, apply it to a dedicated demo controller (so it won't throttle the rest of the API), return proper 429s, and make it testable from the client with a burst button. Let me check the exact Program.cs anchors first.
+
+Now add the imports, the sliding-window service registration, and the middleware:
+
+Now the demo controller:
+
+Build is clean. Let me run the server and verify the sliding window actually returns 429 after 5 rapid requests, and that the unlimited endpoint is unaffected:
+
+Sliding window works exactly right (5 allowed → 429, unlimited endpoint unaffected). The `Retry-After` header didn't show — let me confirm whether the sliding-window limiter exposes that metadata by capturing headers on a freshly-rejected request:
+
+The sliding-window limiter doesn't populate `RetryAfter` metadata in this config (the 429 + JSON body work). Since the worst-case wait in a sliding window is one segment (Window ÷ Segments = 5s), I'll add that as a reliable fallback so clients always get a usable `Retry-After`:
+
+`Retry-After: 5` now present on 429s. Now let me make it demoable from the client — add a "burst" capability to the Endpoint tester (fires N requests at once and summarizes how many were allowed vs throttled):
+
+Now add the burst button style and the catalog section:
+
+Client builds. Now brief doc updates — add a Rate Limiting section to the learning guide and a Q&A entry to the walkthrough:
+
+Now add the Rate Limiting section body before the Exception Handling section:
+
+That heading-spacing warning matches the existing style in that doc (every `###` topic is followed directly by its list) — cosmetic, leaving as is. Let me stop the running server and confirm final state.
+
+Done. Sliding-window rate limiting is implemented, wired into the client, documented, and verified end to end.
+
+## Server ([Program.cs](WebCoreAPI/Program.cs) + [RateLimitController.cs](WebCoreAPI/Controllers/RateLimitController.cs))
+- Used .NET 9's **built-in** rate limiter (no package): `AddRateLimiter()` + `AddSlidingWindowLimiter("sliding", …)` — **5 requests / 15s, split into 3 × 5s segments**, `QueueLimit = 0`.
+- `OnRejected` returns **429 Too Many Requests** with a JSON body and a **`Retry-After`** header (uses limiter metadata when available, falls back to one segment = 5s).
+- `app.UseRateLimiter()` placed after auth, before endpoints.
+- `RateLimitController` opts in via `[EnableRateLimiting("sliding")]` so only this controller is throttled; a second action uses `[DisableRateLimiting]` for side-by-side comparison.
+
+## Verified live
+```
+8 rapid requests → 200,200,200,200,200,429,429,429
+rejected response → HTTP 429, Retry-After: 5
+/api/rate-limit/unlimited ×8 → all 200 (limiter disabled)
+```
+
+## Client
+- Added a **burst** capability to the [Endpoint tester](client/src/components/Endpoint.jsx): a **Burst ×N** button fires N requests in parallel and summarizes `allowed` vs `rejected` (429) with the status breakdown, surfacing the `Retry-After` header in the Headers tab.
+- New catalog section **12b · Rate Limiting** with both the limited and unlimited endpoints. Client rebuilds clean.
+
+## Docs
+- [LEARNING-GUIDE.md](LEARNING-GUIDE.md): new **§19b** with the nightclub analogy, a fixed-vs-sliding ASCII diagram, config snippet, and the "429 = slow down / Retry-After" memory aid.
+- [doc/FULLSTACK-WALKTHROUGH.md](doc/FULLSTACK-WALKTHROUGH.md): Rate Limiting topic with interview Q&A (fixed vs sliding, what a throttled response sends).
+
+**To demo:** start the API + client, go to section **12b**, click **Burst ×8** on `/api/rate-limit` → 5 succeed, 3 return 429; the unlimited endpoint never throttles. The interview one-liner: *"Fixed windows allow a 2× burst across the boundary; a sliding window expires the oldest segment continuously so the rate actually holds — and on rejection you return 429 with Retry-After."*
+
+---
+
